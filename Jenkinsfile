@@ -14,6 +14,11 @@ pipeline {
         stage('Run test') {
             steps {
                 sh "docker compose -f test-suites.yaml up"
+                script{
+                    if(fileExists('output/flight-reservation/testng-failed.xml') || fileExists('output/flight-reservation/testng-failed.xml')){
+                        error('failed tests found')
+                    }
+                }
             }
         }
     }
