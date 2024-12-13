@@ -3,7 +3,7 @@ services:
   vendor-portol:
     image: rashmisoundar/selenium   
     environment:
-    - BROWSER=chrome
+    - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=3
     - TEST_SUITE=vendor-portol.xml
@@ -13,7 +13,7 @@ services:
   flight-reservation:
     image: rashmisoundar/selenium    
     environment:
-    - BROWSER=chrome
+    - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=3
     - TEST_SUITE=flight-reservation.xml
